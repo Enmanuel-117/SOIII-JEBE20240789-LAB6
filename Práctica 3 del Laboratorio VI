@@ -1,0 +1,8 @@
+sudo apt install snort -y
+sudo nano /etc/snort/snort.conf
+modificar var HOME_NET any a 192.168.80.0/24
+sudo nano /etc/snort/rules/local.rules
+sudo snort -A console -q -c /etc/snort/snort.conf -i ens33
+ping 192.168.80.129
+ssh cincspar117@192.168.80.129
+telnet 192.168.80.129
