@@ -1,0 +1,21 @@
+sudo iptables -A INPUT -p tcp --dport 80 -j drop
+sudo iptables -A INPUT -p tcp --dport 21 -j drop
+sudo iptables -A INPUT -p tcp --dport 22 -j drop
+sudo iptables -L --line-numbers
+ssh localhost
+sudo iptables -D INPUT -p tcp --dport 80 -j drop
+sudo iptables -D INPUT -p tcp --dport 21 -j drop
+sudo iptables -D INPUT -p tcp --dport 22 -j drop
+sudo iptables -L --line-numbers
+
+sudo ufw enable
+sudo ufw deny 80/tcp
+sudo ufw deny 21/tcp
+sudo ufw deny 22/tcp
+sudo ufw status numbered
+ssh localhost
+(realizar otras pruebas con host)
+sudo ufw allow 80/tcp
+sudo ufw allow 21/tcp
+sudo ufw allow 22/tcp
+sudo ufw status numbered
