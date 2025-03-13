@@ -1,0 +1,10 @@
+sudo apt update
+sudo apt install gnupg2
+mkdir practica_gpg && cd practica_gpg
+echo "trepasitoconcocacoladeuva15" > archivo.txt
+gpg2 --symmetric archivo.txt
+abc123 (contraseña)
+gpg --decrypt archivo.txt.gpg > archivo.txt
+gpgconf --kill gpg-agent
+gpg2 --decrypt archivo.txt.gpg
+rm archivo.txt
